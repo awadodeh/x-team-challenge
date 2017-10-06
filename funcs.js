@@ -84,15 +84,6 @@ module.exports.findNextMessage = function (inbox, lastHash) {
     }
   }
 
-  // for (var i = 0; i < inbox.messages.length; i += 1) {
-  //   console.log(inbox.messages[i].from);
-  //   console.log(inbox.messages[i].hash);
-  //   console.log(decode(inbox.messages[i].from));
-  //   console.log(fs.readFileSync(path.join(inbox.dir, inbox.messages[i].hash), "utf8"));
-  //   console.log(decode(fs.readFileSync(path.join(inbox.dir, inbox.messages[i].hash), 'utf8')));
-  //     console.log("--");
-  // }
-
   // read and decode the message
   return 'from: ' + decode(inbox.messages[found].from) + '\n---\n' +
     decode(fs.readFileSync(path.join(inbox.dir, inbox.messages[found].hash), 'utf8'))
